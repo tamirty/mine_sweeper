@@ -9,6 +9,13 @@ var gLevel = {
     MINES: 2
 }
 
+var gGame = {
+    isOn: false,
+    revealedCount: 0,
+    markedCount: 0,
+    secsPassed: 0
+}
+
 function init() {
 
     gBoard = buildBoard()
@@ -39,9 +46,10 @@ function buildBoard() {
         }
     }
     board[2][3].isMine = true
+    board[0][2].isMine = true
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
-           board[i][j].minesAroundCount = setMinesNegsCount(i, j, board)
+            board[i][j].minesAroundCount = setMinesNegsCount(i, j, board)
 
         }
     }
@@ -63,17 +71,20 @@ function setMinesNegsCount(rowIdx, colIdx, board) {
     return count
 }
 
-// onCellClicked(elCell, i, j) {
+function onCellClicked(elCell, i, j) {
+gBoard[i][j].isRevealed = true
+renderBoard(gBoard, '.game-board')
 
 
-// }
+}
 
-// onCellMarked(elCell, i, j) {
-
-
-// }
-
-// checkGameOver() {
+function onCellMarked(elCell, i, j) {
+    console.log('right', i, j);
 
 
-// }
+}
+
+function checkGameOver() {
+
+
+}

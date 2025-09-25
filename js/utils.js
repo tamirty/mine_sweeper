@@ -7,16 +7,26 @@ function renderBoard(mat, selector) {
 
         strHTML += '<tr>'
         for (var j = 0; j < mat[0].length; j++) {
+            var cell
+            if (!mat[i][j].isRevealed) {
+                cell = ''
+            }
+            else if (mat[i][j].isMine) {
+                cell = MINE
+            }
+            else if (!mat[i][j].isMine) {
+                cell = mat[i][j].minesAroundCount
+            }
 
-            const cell = mat[i][j].isMine ? MINE : ''
+            // const cell = mat[i][j].isMine ? MINE : mat[i][j].minesAroundCount
             const className = `cell cell-${i}-${j}`
 
-            strHTML += `<td class="${className}">${cell}</td>`
+            strHTML += `<td onClick = "onCellClicked(this, ${i}, ${j})" oncontextmenu="onCellMarked(this, ${i}, ${j}); return false;" class="${className}">${cell}</td>`
         }
         strHTML += '</tr>'
     }
     strHTML += '</tbody></table>'
-    
+
     const elContainer = document.querySelector(selector)
     elContainer.innerHTML = strHTML
 }
