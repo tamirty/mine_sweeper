@@ -11,9 +11,23 @@ table {
     width: 20px;
     height: 20px;
     text-align: center;
-    background-color: rgb(183, 183, 183);
+    background-color:grey;
+}
+
+.cell-rev {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color:lightgrey;
 }
 
 .buttons {
 text-align: center;
+}
+
+h3 {
+text-align: center;
+color: crimson;
+font-size: x-large;
+
 }

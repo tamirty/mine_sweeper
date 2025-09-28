@@ -8,20 +8,30 @@ function renderBoard(mat, selector) {
         strHTML += '<tr>'
         for (var j = 0; j < mat[0].length; j++) {
             var cell
+            var cellStyle = `cell-rev`
+
             if (!mat[i][j].isRevealed) {
                 cell = ''
+                cellStyle = `cell`
+                if (mat[i][j].isMarked) {
+                    cell = FLAG
+                }
             }
+
             else if (mat[i][j].isMine) {
                 cell = MINE
             }
-            else if (!mat[i][j].isMine) {
-                cell = mat[i][j].minesAroundCount
+            else {
+                if (mat[i][j].minesAroundCount === 0) {
+                    cell = ''
+                } else {
+                    cell = mat[i][j].minesAroundCount
+                }
             }
 
-            // const cell = mat[i][j].isMine ? MINE : mat[i][j].minesAroundCount
-            const className = `cell cell-${i}-${j}`
+            const cellIdx = `cell-${i}-${j}`
 
-            strHTML += `<td onClick = "onCellClicked(this, ${i}, ${j})" oncontextmenu="onCellMarked(this, ${i}, ${j}); return false;" class="${className}">${cell}</td>`
+            strHTML += `<td onClick = "onCellClicked(this, ${i}, ${j})" oncontextmenu="onCellMarked(this, ${i}, ${j}); return false;" class="${cellStyle} ${cellIdx}">${cell}</td>`
         }
         strHTML += '</tr>'
     }
