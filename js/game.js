@@ -87,7 +87,7 @@ function onCellClicked(elCell, i, j) {
 }
 
 function onCellMarked(elCell, i, j) {
-    gBoard[i][j].isMarked = true
+    gBoard[i][j].isMarked = !gBoard[i][j].isMarked
     renderBoard(gBoard, '.game-board')
 
 }

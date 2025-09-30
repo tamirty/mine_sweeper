@@ -8,15 +8,15 @@ table {
 }
 
 .cell {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     text-align: center;
     background-color:grey;
 }
 
 .cell-rev {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     text-align: center;
     background-color:lightgrey;
 }
@@ -25,9 +25,26 @@ table {
 text-align: center;
 }
 
+.buttons button{
+font-size: 25px;
+background-color: cadetblue;
+
+}
+
 h3 {
 text-align: center;
 color: crimson;
-font-size: x-large;
+font-size: 50px;
 
+}
+
+footer {
+    text-align: center;
+    font-size: 30px;
+    height: 35px;
+    width: 200px;
+    margin: auto;
+    color:darkblue;
+    background-color: rgb(59, 250, 145);
+    font-weight: bold
 }
