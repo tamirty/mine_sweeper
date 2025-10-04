@@ -1,41 +1,78 @@
 h1 {
     text-align: center;
+
 }
 
 table {
-	margin: 100px auto;
-	border: 1px solid lightgray;
+    margin: 50px auto;
+    border: 1px solid lightgray;
+}
+
+.menu {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: grey;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .cell {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     text-align: center;
-    background-color:grey;
-}
+    background-color: grey;
+    font-size: 25px;
+    }
 
 .cell-rev {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     text-align: center;
-    background-color:lightgrey;
+    background-color: lightgrey;
+    font-size: 25px;
 }
 
 .buttons {
-text-align: center;
+    text-align: center;
 }
 
-.buttons button{
-font-size: 25px;
-background-color: cadetblue;
+.buttons button {
+    font-size: 25px;
+    font-weight: bold;
+    background-color: cadetblue;
 
 }
 
-h3 {
-text-align: center;
-color: crimson;
-font-size: 50px;
+.game-over {
+    display: none
+}
 
+.game-over h3 {
+    text-align: center;
+    color: crimson;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.game-over h3.win {
+    text-align: center;
+    color: darkblue;
+    background-color: lightsalmon;
+    height: 50px;
+    width: 400px;
+    margin: 20px auto;
+}
+
+.game-over p {
+    text-align: center;
+    color: rgb(80, 20, 220);
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
 }
 
 footer {
@@ -44,7 +81,7 @@ footer {
     height: 35px;
     width: 200px;
     margin: auto;
-    color:darkblue;
+    color: darkblue;
     background-color: rgb(59, 250, 145);
     font-weight: bold
 }
